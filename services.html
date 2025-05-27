@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vintage Vibe Events</title>
+  <link rel="stylesheet" href="services.css" />
+  <script src="https://kit.fontawesome.com/c629e063d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="BrandB_logo.png" alt="VVE logo" class="logo" />
+      <ul class="navitems">
+        <li><a href="../INDEX.HTML">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="../gallery/gall.html">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="search-heading" >
+    <h1>Add-On Services</h1>
+    <input type="text" placeholder="Search for services..." class="service-search">
+  </div>
+
+  <div class="services-container">
+    <div class="box" id="catering">
+      <a href="../catterings/cat.html">
+        <img src="./catr1.jpg" alt="ctr" class="box-img" />
+        <h1>CATERRINGS</h1>
+        <p>click to see more images</p>
+    </div>
+
+    <div class="box"id="dj">
+      <a href="../dj/dj.html">
+        <img src="./dj1.webp" alt="dj" class="box-img" />
+        <h1>DJ AND SCREENS</h1>
+        <p>click to see more images</p>
+      </a>
+    </div>
+
+    <div class="box" id="ph">
+      <a href="../photography/ph.html">
+        <img src="./ph1.jpg" alt="PH" class="box-img" />
+        <h1>PHOTOGRAPHY</h1>
+        <p>click to see more images</p>
+      </a>
+    </div>
+
+    <div class="box" id="tent">
+      <a href="../tenthouse/tent.html">
+        <img src="./tent1.jpg" alt="Tent" class="box-img" />
+        <h1>TENT HOUSE</h1>
+        <p>click to see more images</p>
+      </a>
+    </div>
+
+    <div class="box" id="decr">
+      <a href="../decoration/DECOR.HTML">
+        <img src="./anni1.avif" alt="Decoration" class="box-img" />
+        <h1>DECORATION</h1>
+        <p>click to see more images</p>
+      </a>
+    </div>
+
+    <div class="box" id="gifts">
+      <a href="./gifts/gif.html">
+        <img src="./cust1.png" alt="Gifts" class="box-img" />
+        <h1>CUSTOMIZED GIFTS</h1>
+        <p>click to see more images</p>
+      </a>
+    </div>
+  </div>
+
+        <!--footer begins-->
+  <footer class="mdlprt6">
+    <img src="./BrandB_logo.png" alt="">
+           <div class="footer-container">
+             <!-- ABOUT Section -->
+              <div class="footer-section" >
+                <h3 id="about">ABOUT</h3>
+              <ul>
+                 <li>Contact Us</li>
+                 <li>About Us</li>
+                 <li>Information</li>
+             </ul>
+          </div>
+
+                    <!-- services section -->
+                          <div class="footer-section">
+                             <h3>SERVICES</h3>
+                                 <ul>
+                                      <li>Wedding Decor</li>
+                                      <li>Anniversary Decor</li>
+                                      <li>Sreemantham Event</li>
+                                      <li>Cradle Event</li>
+                                      <li>Haldi Event</li>
+                                      <li>Mehandi Event</li>
+                                  </ul>
+                            </div>
+
+                          <!-- service Section -->
+                           <div class="footer-section">
+                              <h3>SERVICES</h3>
+                                <ul>
+                                   <li>Suprise Parties</li>
+                                   <li>Birthday Events</li>
+                                   <li>College Fest</li>
+                                   <li>House Warming Ceremony</li>
+                                   <li>Festive Decors</li>
+                                   <li>Outdoor/Indoor Events</li>
+                               </ul>
+                            </div>
+
+                      <!-- CONSUMER POLICY Section -->
+                              <div class="footer-section">
+                                 <h3>CONSUMER POLICy</h3>
+                                      <ul>
+                                         <li>Terms And Conditions</li>
+                                         <li>Privacy Policy</li>
+                                          <li>Bill Payments</li>
+                                       </ul>
+                                </div>
+
+                                   <!-- MAIL US & SOCIAL Section -->
+                                       <div class="footer-section">
+                                         <h3>Mail Us:</h3>
+                                              <p>
+                                                vintagevibeevents12@gmail.com  <br>
+                                                 ph:886882608,Banjara Hills<br>
+                                                 Hyderabad, India
+                                                </p>
+                                                <br>
+                                                <div class="social-icons">
+                                                             <i class="fab fa-facebook"></i>
+                                                             <i class="fab fa-twitter"></i>
+                                                             <i class="fab fa-youtube"></i>
+                                                             <i class="fab fa-instagram"></i>
+                                                         </div>
+                                          </DIV>
+ </footer>
+
+ <script>
+     const searchinput = document.querySelector('.search-heading input');
+     const services = {
+      'catering': 'catering',
+      'caterrings': 'catering',
+      'photography':'ph',
+      'dj':'dj',
+      'dj and screens':"dj",
+      'tent':'tent',
+      'tenthouse':'tent',
+      'gifts':'gifts',
+      'customized gifts':'gifts',
+      'decoration':'decr',
+      'decorations':'decr'
+     };
+     searchinput.addEventListener('keydown', function(e) {
+      if (e.key ==='Enter'){
+        const query = e.target.value.trim().toLowerCase();
+        const targetid = services[query];
+        if (targetid) {
+          const el = document.getElementById(targetid);
+          if(el){
+            el.scrollIntoView({behavior:'smooth',block:'center'});
+            el.classList.add('glow');
+            setTimeout(()=> el.classList.remove('glow'), 2000);
+          }
+        } else {
+          alert('service not found!');
+        }
+      }
+     });
+ </script>
+</body>
+</html>
